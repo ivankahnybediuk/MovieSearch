@@ -113,4 +113,57 @@ body {
 html {
   color: rgba(245, 233, 233, 0.308);
 }
+
+.pages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80%;
+  margin: auto;
+  font-size: 18px;
+}
+
+.pages .page {
+  padding: 15px;
+  color: rgba(255, 235, 205, 0.376);
+}
+
+.pages .page:hover {
+  color: blanchedalmond;
+}
+
+.pages .active {
+  padding: 15px;
+  color: white;
+  text-decoration: underline;
+}
+
+.page-indicator {
+  margin: auto 40px;
+  font-size: 40px;
+  text-align: center;
+  font-weight: 900;
+  color: rgba(245, 238, 238, 0.89);
+}
+
+.details {
+  width: 100px;
+  background-color: rgba(31, 29, 29, 0.5);
+  color: rgba(255, 235, 205, 0.376);
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  margin: auto;
+  border: 1px solid rgba(255, 235, 205, 0.376);
+}
+
+.details:hover {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.376);
+}
 /*# sourceMappingURL=style.css.map */
