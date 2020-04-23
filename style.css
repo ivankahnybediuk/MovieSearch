@@ -152,18 +152,22 @@ html {
 }
 
 .details {
-  width: 100px;
+  width: 120px;
   background-color: rgba(31, 29, 29, 0.5);
   color: rgba(255, 235, 205, 0.376);
+  height: 50px;
+   border-radius: 10px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 30px;
   text-align: center;
   margin: auto;
   border: 1px solid rgba(255, 235, 205, 0.376);
+  box-shadow: 2px 5px 5px rgba(179, 175, 175, 0.404);
 }
 
 .details:hover {
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.376);
+  box-shadow: 2px 5px 5px rgba(247, 245, 245, 0.527);
 }
 /*# sourceMappingURL=style.css.map */
