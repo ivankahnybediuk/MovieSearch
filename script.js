@@ -17,7 +17,7 @@ let html1="";
 $("#search").on("click", searching);
  function searching (){
     let type = $("#type").val();
-    let search =`${url}s=${searchRequest}&type=${type}&plot=full&page=${clickPage}`;
+    let search =`${url}s=${searchRequest}&type=${type}&page=${clickPage}`;
     $(".results").html(" ");
     fetch(search)
     .then((response)=>{
@@ -25,7 +25,6 @@ $("#search").on("click", searching);
         
     })
     .then((json)=>{
-        console.log(json);
         $(".page-indicator").html(`You are on ${clickPage} page`);
         let result=json["Search"];
         if (result){
@@ -40,8 +39,7 @@ $("#search").on("click", searching);
             <div class="img"><img style="width:350px" src="${image}"/></div>
             <div class="title" style="font-size:23px; text-align:center; color: black; margin: 10px auto 10px auto; width:350px">${title}</div>
             <div class="year" style="font-size:23px; text-align:center; color: black">${year}</div>
-            <div class="id">${id}</div>
-            <div class="details">Details...</div>
+            <div class="details">Details...<span style="display:none">${id}</span></div>
             </div>`;
         };
         $(".results").html(html1);}
@@ -56,7 +54,7 @@ $("#search").on("click", searching);
         });
     });
         };
-});
+    });
 let pagination =function(data){
     let amountPages=+(data["totalResults"])/10;
     let page=0;
@@ -67,15 +65,16 @@ let pagination =function(data){
         $(".pages").html(numberPages)
     };
 };
- function showDetails (ID){
-     ID=$(this ".id").text();
+$(".details").on("click", function(){
+    let ID=$(".id").text();
     fetch(`http://www.omdbapi.com/?apikey=4941d150&i=${ID}&plot=full`)
     .then((response)=>{
         return response.json();  
     })
     .then((json)=>{
         console.log(json)
-})};
-$(".details").on("click", showDetails);
+}) 
+});
+
 
 
